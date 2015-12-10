@@ -130,8 +130,8 @@
       <file leaf-file-name="decompose.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lineprocessingutils/decompose.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4962742">
-              <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.52160954">
+              <caret line="72" column="34" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
               <folding>
                 <element signature="e#28#37#0" expanded="true" />
               </folding>
@@ -770,7 +770,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449777805405</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="work - commit">
+      <created>1449777882460</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1449777882460</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1256,8 +1262,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lineprocessingutils/decompose.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4962742">
-          <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.52160954">
+          <caret line="72" column="34" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
           <folding>
             <element signature="e#28#37#0" expanded="true" />
           </folding>
