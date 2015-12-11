@@ -3,11 +3,10 @@ import re
 import linestore, wordstore
 import numpy as np
 
-class decomposer():
 
+class decomposer():
     conditions = {}
     rules = []
-
 
     def __init__(self):
         pass
@@ -27,22 +26,17 @@ class decomposer():
         # Split the line by space
         spaces_words = self.spaces(line)
         if spaces_words == line:
-            self.conditions['spaces']=[0]
+            self.conditions['spaces'] = [0]
         else:
-            self.conditions['spaces']=[spaces_words]
-
+            self.conditions['spaces'] = [spaces_words]
 
         # Split each word in each line on every special character
         sc_words = self.specialcharacters(spaces_words)
-        self.conditions['sc']=sc_words
+        self.conditions['sc'] = sc_words
 
         # Check every character in each line for specified conditions
         ct_words = self.checktypes(sc_words)
-        self.conditions['ct']=ct_words
-
-
-
-
+        self.conditions['ct'] = ct_words
 
         return list(self.conditions.values()), spaces_words.__len__()
 
@@ -53,24 +47,18 @@ class decomposer():
         spechars = self.conditions['sc']
         checktypes = self.conditions['ct']
 
-
         for i, line in enumerate(spechars):
             for j, word in enumerate(line):
                 ct = []
                 for k, letter in enumerate(word):
                     ct.append(checktypes[i][j][k])
-                ws = wordstore.wordstore(word,ct,[i,j])
+                ws = wordstore.wordstore(word, ct, [i, j])
                 words.append(ws)
             ls = linestore.linestore(words)
         return ls
 
-
-
-
-
-
     def spaces(self, line):
-        words = re.split(" ",line)
+        words = re.split(" ", line)
         words = np.asarray(words)
 
         if words[0].__len__() > line[0].__len__():
@@ -95,12 +83,12 @@ class decomposer():
                 cap_word = []
                 for letter in word:
                     cap_letter = []
-                    if letter.isupper()==True:
+                    if letter.isupper() == True:
                         cap_letter.append(1)
                     else:
                         cap_letter.append(0)
 
-                    if letter.isdigit()==True:
+                    if letter.isdigit() == True:
                         cap_letter.append(1)
                     else:
                         cap_letter.append(0)
@@ -127,26 +115,20 @@ class decomposer():
 
         if size > 1:
             for word in words:
-                wordsplit = re.split('[\-\:\[\]\.\(\)\=\_\;\'\,\/\\\\\\n]+',word)
+                wordsplit = re.split('[\-\:\[\]\.\(\)\=\_\;\'\,\/\\\\\\n]+', word)
                 for wordp in wordsplit:
                     if not (wordp == '' or wordp == "''"):
                         wordsc.append(wordp)
             wordstoreturn.append(wordsc)
         else:
-            wordsc = re.split('[\-\:\[\]\.\(\)\=\_\;\'\,\/\\\\\\n]+',words)
+            wordsc = re.split('[\-\:\[\]\.\(\)\=\_\;\'\,\/\\\\\\n]+', words)
             wordstoreturn.append([wordsc])
 
         return wordstoreturn
 
-
-
     def getshape(self, data):
         x = data.__len__()
         try:
-            return x,0
+            return x, 0
         except:
             print 'error'
-
-
-
-
